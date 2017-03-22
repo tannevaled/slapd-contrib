@@ -31,7 +31,7 @@ SASL_NOCANON	on
 # when authenticated with SASL/GSSAPI
 authz-regexp "^uid=([^/,]*)/admin,cn=LABOS.<DOMAIN>.<TLD>,cn=GSSAPI,cn=auth" "cn=admin,dc=labos,dc=<DOMAIN>,dc=<TLD>"
 # when authenticated with SASL/PLAIN
-authz-regexp "^uid=([^/,]*),cn=plain,cn=auth" "uid=$1,ou=users,ou=cpht,dc=labos,dc=polytechnique,dc=fr"
+authz-regexp "^uid=([^/,]*),cn=plain,cn=auth" "uid=$1,ou=users,dc=labos,dc=<DOMAIN>,dc=<TLD>"
 
 access to *
         by dn.exact="gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth" manage
