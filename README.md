@@ -119,7 +119,8 @@ saslauthd 2.1.26
 authentication mechanisms: getpwent kerberos5 pam rimap shadow ldap httpform
 ```
 ### slapd supported SASL Mechanisms
-```# ldapsearch -x -H ldapi:/// -b '' -LLL -s base supportedSASLMechanisms
+```
+# ldapsearch -x -H ldapi:/// -b '' -LLL -s base supportedSASLMechanisms
 dn:
 supportedSASLMechanisms: GSS-SPNEGO
 supportedSASLMechanisms: GSSAPI
