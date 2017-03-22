@@ -86,6 +86,20 @@ userPassword: {SASL}<uid>@<REALM>
 ## SASL
 ### Installation
 ### Configuration
+#### /etc/sysconfig/saslauthd
+```
+# Directory in which to place saslauthd's listening socket, pid file, and so
+# on.  This directory must already exist.
+SOCKETDIR=/run/saslauthd
+
+# Mechanism to use when checking passwords.  Run "saslauthd -v" to get a list
+# of which mechanism your installation was compiled with the ablity to use.
+MECH=pam
+
+# Additional flags to pass to saslauthd on the command line.  See saslauthd(8)
+# for the list of accepted flags.
+#FLAGS="-O /etc/saslauthd.conf"
+```
 #### /etc/sasl2/ldap.conf
 ```
 mech_list: PLAIN
