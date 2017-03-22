@@ -98,7 +98,22 @@ saslauthd_path: /run/saslauthd/mux
 # systemctl start  saslauthd
 ```
 ## Tests
-### SASL/GSSAPI
+### saslauthd authentication mechanisms
+```
+# saslauthd -v
+saslauthd 2.1.26
+authentication mechanisms: getpwent kerberos5 pam rimap shadow ldap httpform
+```
+### slapd supported SASL Mechanisms
+```# ldapsearch -x -H ldapi:/// -b '' -LLL -s base supportedSASLMechanisms
+dn:
+supportedSASLMechanisms: GSS-SPNEGO
+supportedSASLMechanisms: GSSAPI
+supportedSASLMechanisms: EXTERNAL
+supportedSASLMechanisms: LOGIN
+supportedSASLMechanisms: PLAIN
+```
+### SASL / GSSAPI
 ```
 # kinit <uid>@LABOS.<DOMAIN>.<TLD>
 Password for <uid>@LABOS.<DOMAIN>.<TLD>:
@@ -110,7 +125,7 @@ SASL data security layer installed.
     162 entries read                                                                                                                                                                                                     
 No changes.
 ```
-### SASL/PLAIN
+### SASL / PLAIN
 ```
 # ldapvi -Z -Y PLAIN -U <uid>
 SASL/PLAIN authentication started
@@ -126,7 +141,7 @@ SASL SSF: 0
       162 entries read                                                                                                                                                                                                     
 No changes.
 ```
-### SIMPLE-BIND
+### SASSL / SIMPLE-BIND PASSTHRU
 ```
 # ldapvi -Z -D uid=<uid>,ou=users,ou=<ou>,dc=<domain>,dc=<tld>
 
