@@ -1,6 +1,6 @@
 # slapd-contrib
 
-The purpose is to be able to bind simple to the LDAP directory while havinf the userPassword stored in Kerberos
+The purpose is to be able to bind simple to the LDAP directory while having the userPassword stored in Kerberos
 
 ## Kerberos
 ### Installation
@@ -15,9 +15,9 @@ make conf
 ### Configuration
 #### /etc/openldap/ldap.conf
 ```
-BASE	dc=labos,dc=<DOMAIN>,dc=<TLD>
-URI	  ldap://ldap1.labos.<DOMAIN>.<TLD> ldap://ldap2.labos.<DOMAIN>.<TLD>
-TLS_CACERTDIR	/etc/openldap/certs
+BASE	      dc=labos,dc=<DOMAIN>,dc=<TLD>
+URI	      ldap://ldap1.labos.<DOMAIN>.<TLD> ldap://ldap2.labos.<DOMAIN>.<TLD>
+TLS_CACERTDIR /etc/openldap/certs
 TLS_REQCERT   demand
 SASL_MECH     PLAIN
 # Turning this off breaks GSSAPI used with krb5 when rdns = false
@@ -39,7 +39,7 @@ access to *
         by * none
 ```
 ### user.ldif
-Using the {SASL} prefix in the userPassword attribute let us use simple-bind
+Using the {SASL} prefix in the userPassword attribute let us use simple-bind for compatibility purpose
 ```
 dn: uid=<UID>,ou=users,ou=labos,dc=<DOMAIN>,dc=<TLD>
 uid: <UID>
