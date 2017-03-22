@@ -63,7 +63,7 @@ SASL_NOCANON	on
 ```
 #### /etc/openldap/slapd.conf
 ```
-
+security ssf=1 update_ssf=112 simple_bind=64
 
 # to get administration rights
 # when authenticated with SASL/GSSAPI
