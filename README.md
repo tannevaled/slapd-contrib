@@ -65,10 +65,10 @@ SASL_NOCANON	on
 ```
 security ssf=1 update_ssf=112 simple_bind=64
 
-# to get administration rights
-# when authenticated with SASL/GSSAPI
-authz-regexp "^uid=([^/,]*)/admin,cn=<OU>.<DOMAIN>.<TLD>,cn=GSSAPI,cn=auth" "cn=admin,dc=<ou>,dc=<domain>,dc=<tld>"
-# when authenticated with SASL/PLAIN
+# to get administration rights when authenticated with SASL/GSSAPI
+authz-regexp "^uid=([^/,]*)/admin,cn=<ou>.<domain>.<tld>,cn=GSSAPI,cn=auth" "cn=admin,dc=<ou>,dc=<domain>,dc=<tld>"
+
+# to get administration rights when authenticated with SASL/PLAIN
 authz-regexp "^uid=([^/,]*),cn=plain,cn=auth" "uid=$1,ou=users,dc=<ou>,dc=<domain>,dc=<tld>"
 
 access to *
