@@ -77,11 +77,18 @@ access to *
         by * none
 ```
 ### user.ldif
-Using the {SASL} prefix in the userPassword attribute let us use simple-bind for compatibility purpose
+Using the {SASL} prefix in the userPassword attribute let us use simple-bind for compatibility purpose.
+
+cf http://www.lichteblau.com/ldapvi/cyrus-sasl/sysadmin.html
+Realms will be passed to saslauthd as part of the saslauthd protocol, however the way each saslauthd module deals with the situation is different (for example, the LDAP plugin allows you to use the realm to query the server, while the rimap and PAM plugins ignore it entirely).
+
+cf https://web.mit.edu/kerberos/krb5-1.5/krb5-1.5.4/doc/krb5-user/What-is-a-Kerberos-Principal_003f.html
+Traditionally, a principal is divided into three parts: the primary, the instance, and the realm. The format of a typical Kerberos V5 principal is primary/instance@REALM. 
+
 ```
 dn: uid=<uid>,ou=users,ou=<ou>,dc=<domain>,dc=<tld>
 uid: <uid>
-userPassword: {SASL}<uid>@<REALM>
+userPassword: {SASL}<primary>
 ```
 ## SASL
 ### Installation
