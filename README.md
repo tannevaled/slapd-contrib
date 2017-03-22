@@ -156,7 +156,7 @@ SASL SSF: 0
       162 entries read                                                                                                                                                                                                     
 No changes.
 ```
-### SASSL / SIMPLE-BIND PASSTHRU
+### SASL / SIMPLE-BIND PASSTHRU
 ```
 # ldapvi -Z -D uid=<uid>,ou=users,ou=<ou>,dc=<domain>,dc=<tld>
 
