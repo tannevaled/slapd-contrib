@@ -35,7 +35,7 @@ The purpose is to be able to bind simple to the LDAP directory while having the 
 ```
 ## PAM
 ### Configuration
-#### /etc/pam.d/slapd 
+#### /etc/pam.d/ldap 
 ```
 #%PAM-1.0
 auth       include      password-auth
