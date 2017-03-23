@@ -35,7 +35,7 @@ The purpose is to be able to bind simple to the LDAP directory while having the 
 ```
 ## PAM
 ### Configuration
-#### /etc/pam.d/ldap 
+#### /etc/pam.d/slapd 
 ```
 #%PAM-1.0
 auth       include      password-auth
@@ -107,7 +107,7 @@ MECH=pam
 # for the list of accepted flags.
 #FLAGS="-O /etc/saslauthd.conf"
 ```
-#### /etc/sasl2/ldap.conf
+#### /etc/sasl2/slapd.conf
 ```
 mech_list: PLAIN
 pwcheck_method: saslauthd
