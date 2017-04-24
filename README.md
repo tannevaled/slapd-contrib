@@ -50,11 +50,16 @@ make init
 make conf
 ```
 ### Configuration
-
+#### /etc/nslcd.conf
+```
+uri ldap://ldap1.<ou>.<domain>.<tld> ldap://ldap2.<ou>.<domain>.<tld>
+base dc=<ou>,dc=<domain>,dc=<tld>
+```
 #### /etc/openldap/ldap.conf
 ```
+
+URI	          ldaps://ldap1.<ou>.<domain>.<tld> ldaps://ldap2.<ou>.<domain>.<tld>
 BASE	      dc=<ou>,dc=<domain>,dc=<tld>
-URI	      ldap://ldap1.<ou>.<domain>.<tld> ldap://ldap2.<ou>.<domain>.<tld>
 TLS_CACERTDIR /etc/openldap/certs
 TLS_REQCERT   demand
 SASL_MECH     PLAIN
